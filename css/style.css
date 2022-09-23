@@ -207,7 +207,7 @@ Smartphones & small tablets */
 
   .add-cats,
   .breeds {
-    flex-basis: 40%;
+    flex-basis: 30%;
   }
 
   img.cat {
