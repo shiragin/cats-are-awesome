@@ -20,6 +20,10 @@ body {
   /* align-items: center; */
 }
 
+.wrapper {
+  min-height: calc(100vh - 100px);
+}
+
 nav {
   height: 300px;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -95,11 +99,12 @@ h1 {
 }
 
 section {
+  height: calc(100vh - 400px);
   display: flex;
   flex-direction: column;
   align-self: center;
   justify-content: center;
-  padding: 100px 0;
+  padding: 10px 0;
 }
 
 img.cat {
@@ -122,10 +127,6 @@ img.cat {
 
 .hidden {
   display: none;
-}
-
-.wrapper {
-  min-height: calc(100vh - 100px);
 }
 
 footer {
