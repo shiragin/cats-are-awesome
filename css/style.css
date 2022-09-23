@@ -98,7 +98,7 @@ h1 {
 }
 
 section {
-  height: calc(100vh - 400px);
+  min-height: calc(100vh - 400px);
   display: flex;
   flex-direction: column;
   align-self: center;
@@ -165,4 +165,51 @@ footer p {
 a {
   text-decoration: none;
   color: #ccc;
+}
+
+/* Media queries
+
+Smartphones & small tablets */
+
+@media only screen and (max-width: 1024px) {
+}
+
+/* smartphones */
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    min-height: calc(100vh - 50px);
+  }
+
+  .section {
+    min-height: calc(100vh - 400px);
+  }
+
+  .navbar {
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  img.cat {
+    max-width: 90vw;
+    max-height: 90%;
+  }
+
+  .desc {
+    max-width: 90vw;
+  }
+
+  footer {
+    height: 100px;
+    padding-top: 50px;
+  }
+
+  footer h5 {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  footer p {
+    font-size: 10px;
+  }
 }

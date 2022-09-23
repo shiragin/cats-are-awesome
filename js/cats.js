@@ -44,7 +44,6 @@ function addCat(url, desc) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       // const img = document.createElement('img');
       catImg.src = data[0].url;
       catImg.alt = 'cute kittie';
@@ -73,9 +72,7 @@ document.querySelector('.add-cats').addEventListener('mousedown', function () {
 });
 
 select.addEventListener('change', function (event) {
-  console.log(event.target.value);
   let selectedBreed = breedsArray[event.target.value];
-  console.log(selectedBreed.description);
   let selectedURL = `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed.id}`;
   let selectedDesc = selectedBreed.description;
   addCat(selectedURL, selectedDesc);
