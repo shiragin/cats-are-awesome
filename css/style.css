@@ -141,23 +141,26 @@ footer {
   height: 100px;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('../img/sanath-kumar-4N4DiBz9c5s-unsplash.jpg') no-repeat;
+  background-position: bottom;
   background-color: #333;
   text-align: center;
-  padding: 10px, 15%, 10px, 15%;
+  padding: 10px 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 footer h5 {
   color: #eee;
   margin: 0;
   margin-bottom: 8px;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 footer p {
   color: #eee;
+  font-size: 12px;
   font-weight: 300;
   margin: 0;
 }
