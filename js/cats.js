@@ -51,7 +51,7 @@ function addCat(url, desc) {
       if (desc) {
         catDesc.innerText = desc;
       } else {
-        catDesc.innerText = 'A beautiful, precious cat.';
+        catDesc.innerText = '';
       }
 
       // document.querySelector('.cats').appendChild(img);
