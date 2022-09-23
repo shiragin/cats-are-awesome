@@ -14,10 +14,6 @@ fetch(BREEDS_URL)
   })
   .then(data => {
     data = data.filter(img => img.image?.url != null);
-    // console.log(data);
-    // data.forEach(element => {
-    //   breedsArray.push(element.name);
-    // });
 
     breedsArray = data;
 
@@ -29,7 +25,6 @@ fetch(BREEDS_URL)
       option.innerText = breed.name;
       select.appendChild(option);
     }
-    // showBreedImage(0);
   });
 
 // Adds a cat picture
@@ -44,7 +39,6 @@ function addCat(url, desc) {
       return response.json();
     })
     .then(function (data) {
-      // const img = document.createElement('img');
       catImg.src = data[0].url;
       catImg.alt = 'cute kittie';
 
@@ -54,14 +48,12 @@ function addCat(url, desc) {
         catDesc.innerText = '';
       }
 
-      // document.querySelector('.cats').appendChild(img);
-
-      // stop showing loading spinner
-      spinner.classList.add('hidden');
-      catImg.classList.remove('hidden');
-      setTimeout(function () {
-        catDesc.classList.remove('hidden');
-      }, 6000);
+      // // stop showing loading spinner
+      // spinner.classList.add('hidden');
+      // catImg.classList.remove('hidden');
+      // setTimeout(function () {
+      //   catDesc.classList.remove('hidden');
+      // }, 6000);
     });
 }
 
@@ -76,4 +68,11 @@ select.addEventListener('change', function (event) {
   let selectedURL = `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed.id}`;
   let selectedDesc = selectedBreed.description;
   addCat(selectedURL, selectedDesc);
+});
+
+catImg.addEventListener('load', function () {
+  // stop showing loading spinner
+  spinner.classList.add('hidden');
+  catImg.classList.remove('hidden');
+  catDesc.classList.remove('hidden');
 });

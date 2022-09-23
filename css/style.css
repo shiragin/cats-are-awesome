@@ -124,10 +124,6 @@ img.cat {
   margin-top: 100px;
 }
 
-.hidden {
-  display: none;
-}
-
 .desc {
   font-size: 16px;
   font-weight: 300;
@@ -135,6 +131,10 @@ img.cat {
   max-width: 500px;
   align-self: center;
   padding: 5px 15px;
+}
+
+.hidden {
+  display: none;
 }
 
 footer {
