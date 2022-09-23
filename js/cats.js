@@ -34,9 +34,10 @@ fetch(BREEDS_URL)
 
 // Adds a cat picture
 
-function addCat(url) {
+function addCat(url, desc) {
   // show loading spinner
   catImg.classList.add('hidden');
+  catDesc.classList.add('hidden');
   spinner.classList.remove('hidden');
   fetch(url)
     .then(function (response) {
@@ -48,13 +49,20 @@ function addCat(url) {
       catImg.src = data[0].url;
       catImg.alt = 'cute kittie';
 
-      // if (!d)
+      if (desc) {
+        catDesc.innerText = desc;
+      } else {
+        catDesc.innerText = 'A beautiful, precious cat.';
+      }
 
       // document.querySelector('.cats').appendChild(img);
 
       // stop showing loading spinner
       spinner.classList.add('hidden');
       catImg.classList.remove('hidden');
+      setTimeout(function () {
+        catDesc.classList.remove('hidden');
+      }, 6000);
     });
 }
 
@@ -66,8 +74,9 @@ document.querySelector('.add-cats').addEventListener('mousedown', function () {
 
 select.addEventListener('change', function (event) {
   console.log(event.target.value);
-  selectedBreed = breedsArray[event.target.value];
-  console.log(selectedBreed.id);
-  selectedURL = `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed.id}`;
-  addCat(selectedURL);
+  let selectedBreed = breedsArray[event.target.value];
+  console.log(selectedBreed.description);
+  let selectedURL = `https://api.thecatapi.com/v1/images/search?breed_ids=${selectedBreed.id}`;
+  let selectedDesc = selectedBreed.description;
+  addCat(selectedURL, selectedDesc);
 });
