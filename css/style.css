@@ -42,7 +42,6 @@ nav::after {
 }
 
 .container {
-  width: 50vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -61,7 +60,7 @@ h1 {
 
 .navbar {
   margin: 0;
-  padding: 0 20px;
+  padding: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
